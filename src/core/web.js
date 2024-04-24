@@ -21,7 +21,7 @@ export async function runWeb(express, app, gitCommit, gitBranch, __dirname) {
         try { decodeURIComponent(req.path) } catch (e) { return res.redirect('/') }
         next();
     });
-    app.get('/onDemand', (req, res) => {
+    app.get('/cobalt/onDemand', (req, res) => {
         try {
             if (req.query.blockId) {
                 let blockId = req.query.blockId.slice(0, 3);
@@ -63,17 +63,17 @@ export async function runWeb(express, app, gitCommit, gitBranch, __dirname) {
             })
         }
     });
-    app.get("/status", (req, res) => {
+    app.get("/cobalt/status", (req, res) => {
         return res.status(200).end()
     });
-    app.get("/", (req, res) => {
+    app.get("/cobalt/", (req, res) => {
         return res.sendFile(`${__dirname}/${findRendered(languageCode(req), req.header('user-agent') ? req.header('user-agent') : genericUserAgent)}`)
     });
-    app.get("/favicon.ico", (req, res) => {
+    app.get("/cobalt/favicon.ico", (req, res) => {
         return res.sendFile(`${__dirname}/src/front/icons/favicon.ico`)
     });
     app.get("/*", (req, res) => {
-        return res.redirect('/')
+        return res.redirect('/cobalt')
     });
 
     app.listen(process.env.WEB_PORT || 9001, () => {
