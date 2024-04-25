@@ -72,7 +72,7 @@ export async function runWeb(express, app, gitCommit, gitBranch, __dirname) {
     app.get("/cobalt/favicon.ico", (req, res) => {
         return res.sendFile(`${__dirname}/src/front/icons/favicon.ico`)
     });
-    app.get("/*", (req, res) => {
+    app.get("/cobalt/*", (req, res) => {
         return res.redirect('/cobalt')
     });
 
