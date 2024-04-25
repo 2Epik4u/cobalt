@@ -14,8 +14,8 @@ export async function runWeb(express, app, gitCommit, gitBranch, __dirname) {
 
     await buildFront(gitCommit, gitBranch);
 
-    app.use('/', express.static('./build/min'));
-    app.use('/', express.static('./src/front'));
+    app.use('/cobalt/', express.static('./build/min'));
+    app.use('/cobalt/', express.static('./src/front'));
 
     app.use((req, res, next) => {
         try { decodeURIComponent(req.path) } catch (e) { return res.redirect('/') }
