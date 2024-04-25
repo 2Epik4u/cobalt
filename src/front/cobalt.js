@@ -449,7 +449,7 @@ async function download(url) {
 async function loadCelebrationsEmoji() {
     let bac = eid("about-footer").innerHTML;
     try {
-        let j = await fetch(`/onDemand?blockId=1`).then((r) => { if (r.status === 200) { return r.json() } else { return false } }).catch(() => { return false });
+        let j = await fetch(`/cobalt/onDemand?blockId=1`).then((r) => { if (r.status === 200) { return r.json() } else { return false } }).catch(() => { return false });
         if (j && j.status === "success" && j.text) {
             eid("about-footer").innerHTML = eid("about-footer").innerHTML.replace('<img class="emoji" draggable="false" height="22" width="22" alt="🐲" src="emoji/dragon_face.svg" loading="lazy">', j.text);
         }
@@ -466,7 +466,7 @@ async function loadOnDemand(elementId, blockId) {
         if (store.historyContent) {
             j = store.historyContent;
         } else {
-            await fetch(`/onDemand?blockId=${blockId}`).then(async(r) => {
+            await fetch(`/cobalt/onDemand?blockId=${blockId}`).then(async(r) => {
                 j = await r.json();
                 if (j && j.status === "success") {
                     store.historyContent = j;

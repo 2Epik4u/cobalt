@@ -1,8 +1,8 @@
 User-Agent: *
-Disallow: /emoji/
-Disallow: /fonts/
-Disallow: /icons/
-Disallow: /sponsors/
-Disallow: /updateBanners/
+Disallow: /cobalt/emoji/
+Disallow: /cobalt/fonts/
+Disallow: /cobalt/icons/
+Disallow: /cobalt/sponsors/
+Disallow: /cobalt/updateBanners/
 Disallow: /*.js
 Disallow: /*.css
