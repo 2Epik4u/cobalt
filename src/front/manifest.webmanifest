@@ -1,7 +1,7 @@
 {
     "name": "cobalt",
     "short_name": "cobalt",
-    "start_url": "/",
+    "start_url": "/cobalt",
     "icons": [
         {
             "src": "/cobalt/icons/android-chrome-192x192.png",
