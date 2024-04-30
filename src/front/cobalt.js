@@ -539,7 +539,7 @@ const loadOnDemand = async(elementId, blockId) => {
 
     try {
         if (!store.historyContent) {
-            let j = await fetch(`/cobalt/onDemand?blockId=${blockId}`).then(r => r.json()).catch(() => {});
+            let j = await fetch(`/onDemand?blockId=${blockId}`).then(r => r.json()).catch(() => {});
             if (!j) throw new Error();
 
             if (j.status === "success") {
